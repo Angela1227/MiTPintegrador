@@ -1,6 +1,9 @@
 package org.Example.TPintegrador;
 
+import java.nio.file.Path;
+
 public class Pronostico {
+	private int ganador;
 	private Partido partido;
 	private Equipo equipo;
 	private EnumResultado resultado;
@@ -12,6 +15,7 @@ public class Pronostico {
 		this.resultado = resultado;
 	}
 
+	
 	public Partido getPartido() {
 		return this.partido;
 	}
@@ -32,6 +36,12 @@ public class Pronostico {
 		} else {
 			return 0;
 		}
+	}
 
+	public int getGanador() {
+		return ganador;
+	}
+	private void setGanador(int ganador) {
+		this.ganador = ganador;
 	}
 }

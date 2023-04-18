@@ -18,7 +18,7 @@ public class MainTP {
 		BufferedReader lector;
 		List<String> lineasResultados = new ArrayList <String>();
 		try {
-			archivo= new FileReader("C:\\Users\\Angi\\eclipse-workspace\\TPintegrador\\src\\test\\java\\pronostico_test1\\Resultados");
+			archivo= new FileReader("C:\\Users\\Angi\\eclipse-workspace\\TPintegrador\\java\\main\\resources\\Resultados");
 			
 			if(archivo.ready()) {
 			lector = new BufferedReader(archivo);
@@ -77,7 +77,7 @@ public class MainTP {
 	BufferedReader lector2;
 	
 	try {
-		archivo2= new FileReader("C:\\Users\\Angi\\eclipse-workspace\\TPintegrador\\src\\test\\java\\pronostico_test1\\Test pronosticos");
+		archivo2= new FileReader("C:\\Users\\Angi\\eclipse-workspace\\TPintegrador\\java\\main\\resources\\Test pronosticos");
 		
 		if(archivo2.ready()) {
 		lector2 = new BufferedReader(archivo2);
@@ -115,6 +115,7 @@ public class MainTP {
 					partido = partidoCol;
 					
 				}
+			
 			}
 			Equipo equipo = null;
 			EnumResultado resultado = null;
