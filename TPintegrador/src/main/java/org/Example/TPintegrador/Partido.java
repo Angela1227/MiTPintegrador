@@ -61,7 +61,9 @@ public class Partido {
 				return EnumResultado.GANADOR;	
 			}	else {
 				return EnumResultado.PERDEDOR;
-			}	
+			}
+			
+			
 		}
 		
 	}

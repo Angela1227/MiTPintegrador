@@ -10,14 +10,22 @@ public class Participante {
 	private Equipo equipo;
 	private String nombre;
 	private Partido partido;
-	public String getNombre() {
-		return nombre;
-	}
+	private Pronostico pronostico;
+	private int puntaje;
+	private EnumResultado resultado;
+	
+
+	
+	//para llamar al participante
 	public Participante(String nombre, int puntaje) {
 		this.nombre = nombre;
 		this.puntaje = puntaje;
 	}
 	
+	//los getter y setters
+	public String getNombre() {
+		return nombre;
+	}
 	public Equipo getEquipo() {
 		return equipo;
 	}
@@ -36,28 +44,28 @@ public class Participante {
 	public void setResultado(EnumResultado resultado) {
 		this.resultado = resultado;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getPuntaje() {
+	
+	
+	//establezco el puntaje
+	public  int getPuntaje() {
 		return puntaje;
 	}
+	//establezo que puntaje se relaciona con puntos
 	public void setPuntaje(int puntaje) {
-		this.puntaje = puntaje;
+		this.puntaje = pronostico.puntos();
 	}
-	private int puntaje;
 	
-	private EnumResultado resultado;
-	public int puntaje() {
-		// this.resultado -> pred
-		EnumResultado resultadoReal = this.partido.resultado(this.equipo);
-		if (this.resultado.equals(resultadoReal)) {
-			return 1;
-		} else {
-			return 0;
-		}
+	
+	
+	
+	
+	
 		
 		
 		
-}
+
 }

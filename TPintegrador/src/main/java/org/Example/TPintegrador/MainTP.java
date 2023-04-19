@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 public class MainTP {
+	private Participante participante;
+	private static  Participante nombre;
+	private Participante puntaje;
 	public static void main(String[] args) {
 	
 		
@@ -55,7 +58,7 @@ public class MainTP {
 			primera = false;
 		} else {
 			// Argentina,1,2,Arabia Saudita
-			String[] campos = lineaResultado.split(",");
+			String[] campos = lineaResultado.split(",");//CAMPOS
 			Equipo equipo1 = new Equipo(campos[0]);
 			
 			Equipo equipo2 = new Equipo(campos[3]);
@@ -104,6 +107,7 @@ public class MainTP {
 			String[] campos = lineaPronostico.split(",");
 			Equipo equipo1 = new Equipo(campos[0]);
 			Equipo equipo2 = new Equipo(campos[4]);
+			
 			Partido partido = null;
 
 			for (Partido partidoCol : partidos) {
@@ -131,6 +135,7 @@ public class MainTP {
 				equipo = equipo1;
 				resultado = EnumResultado.PERDEDOR;
 			}
+			Participante participante = new Participante(null, 0);
 			Pronostico pronostico = new Pronostico(partido, equipo, resultado);
 			// sumar los puntos correspondientes
 			puntos += pronostico.puntos();
