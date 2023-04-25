@@ -1,30 +1,41 @@
 package org.Example.TPintegrador;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.Example.TPintegrador.App;
-
+import com.opencsv.bean.CsvBindByPosition;
 
 public class Participante {
-	//nombre y puntaje 
+	
+	//Creo el csv para poder mostrar a los participantes
+	
+	@CsvBindByPosition(position = 0)
+	private int ronda;
+	@CsvBindByPosition(position = 1)
+	private String participante;
+	@CsvBindByPosition(position = 2)
+	private int puntos;
+	
+	
+	
+	
+	public int getRonda() {
+		return ronda;
+	}
+	public void setRonda(int ronda) {
+		this.ronda = ronda;
+	}
+	public String getParticipante() {
+		return participante;
+	}
+	public void setParticipante(String participante) {
+		this.participante = participante;
+	}
+	public int getPuntos() {
+		return puntos;
+	}
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
+	
 
-	
-	
-	
-	 }
-	
-	
-	
-	
-	
-	
-		
-		
-		
 
+}
 

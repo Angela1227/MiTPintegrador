@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.opencsv.bean.CsvBindByPosition;
+
 import models.Pronostico;
 import models.Resultado;
 
@@ -28,7 +30,7 @@ import models.Resultado;
         for(Pronostico pronostico : listaPronosticos) {
         	
         	//Primero me fijo si ya tengo agregado al participante
-        	if(!puntosParticipantes.containsKey(pronostico.getParticipante())){
+        	if(!puntosParticipantes.containsKey(pronostico.getParticipante())){//*
         		//si NO esta, lo agrego con 0 puntos
         		puntosParticipantes.put(pronostico.getParticipante(),0);
         		
@@ -54,10 +56,15 @@ import models.Resultado;
         
         //Imprimo en pantalla los puntos calculados
         for(String participante : puntosParticipantes.keySet()) {
-        	int ronda = 0;
-    		ronda += 1;
-			System.out.println("Ronda: " + ronda +";"+"la participante: " + participante +", ha obtenido: "+puntosParticipantes.get(participante));
+        	
+    		
+			System.out.println("participante: " + participante +", ha obtenido: "+puntosParticipantes.get(participante));
+			
+        
         }
         
+        
+        
     }
+
 }
