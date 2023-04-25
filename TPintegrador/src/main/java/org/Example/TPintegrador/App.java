@@ -11,15 +11,15 @@ import models.Resultado;
 {
     public static void main( String[] args )
     {
-	Lector lectorArchivos = new Lector();
+	Lector Lector = new Lector();
     	
     	//Leo el archivo de resultado y lo asigno a una variable
         List<Resultado> listaResultado = 
-        		lectorArchivos.parsearResultados("TPintegrador/src/main/java/models/Resultados.csv");
+        		Lector.parsearResultados("src\\main\\java\\models\\resultados");
 
     	//Leo el archivo de pronostico y lo asigno a una variable
         List<Pronostico> listaPronosticos = 
-        		lectorArchivos.parsearPronosticos("TPintegrador/src/main/java/models/Test pronosticos.csv");
+        		Lector.parsearPronosticos("src\\main\\java\\models\\pronosticos");
 
         //Creo un tipo de dato hash set, así voy sumando puntos de los participantes.
         Map<String,Integer> puntosParticipantes = new HashMap<String, Integer>();
@@ -31,6 +31,7 @@ import models.Resultado;
         	if(!puntosParticipantes.containsKey(pronostico.getParticipante())){
         		//si NO esta, lo agrego con 0 puntos
         		puntosParticipantes.put(pronostico.getParticipante(),0);
+        		
         	}
         
         	//Busco el partido dentro de resultados
@@ -53,7 +54,9 @@ import models.Resultado;
         
         //Imprimo en pantalla los puntos calculados
         for(String participante : puntosParticipantes.keySet()) {
-        	System.out.println(participante+": "+puntosParticipantes.get(participante));
+        	int ronda = 0;
+    		ronda += 1;
+			System.out.println("Ronda: " + ronda +";"+"la participante: " + participante +", ha obtenido: "+puntosParticipantes.get(participante));
         }
         
     }
