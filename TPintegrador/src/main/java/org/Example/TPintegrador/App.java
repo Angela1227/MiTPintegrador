@@ -57,10 +57,8 @@ import models.Resultado;
         //Imprimo en pantalla los puntos calculados
         for(String participante : puntosParticipantes.keySet()) {
         	
-    		
 			System.out.println("participante: " + participante +", ha obtenido: "+puntosParticipantes.get(participante));
 			
-        
         }
         
         
