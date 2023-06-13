@@ -1,71 +1,59 @@
 package org.Example.TPintegrador;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 
+import com.opencsv.bean.CsvBindByPosition;
+
+import models.Pronostico;
+
 public class Participante {
-	//nombre y puntaje 
-	private Equipo equipo;
-	private String nombre;
-	private Partido partido;
-	private Pronostico pronostico;
-	private int puntaje;
-	private EnumResultado resultado;
+	
+	//Creo el csv para poder mostrar a los participantes
+	
+	@CsvBindByPosition(position = 0)
+    private Integer ronda;
+    @CsvBindByPosition(position = 2)
+    private String participante;
+    @CsvBindByPosition(position = 1)
+    private Integer puntos;
+	
+	static void main(String[] args) {
+	
+		
+		
+	Lector lector = new Lector();
+	List<Pronostico> listadepronosticos = lector.parsearPronosticos("src\\main\\java\\models\\pronosticos");
+	
+	//pronostico: participante
+	for(Pronostico pronostico: listadepronosticos) {
+		String participante = pronostico.getParticipante();
+	}
+	
+	
+	}
+	
+	
+	
+	public int getRonda() {
+		return ronda;
+	}
+	public void setRonda(int ronda) {
+		this.ronda = ronda;
+	}
+	public String getParticipante() {
+		return participante;
+	}
+	public void setParticipante(String participante) {
+		this.participante = participante;
+	}
+	public int getPuntos() {
+		return puntos;
+	}
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
 	
 
-	
-	//para llamar al participante
-	public Participante(String nombre, int puntaje) {
-		this.nombre = nombre;
-		this.puntaje = puntaje;
-	}
-	
-	//los getter y setters
-	public String getNombre() {
-		return nombre;
-	}
-	public Equipo getEquipo() {
-		return equipo;
-	}
-	public void setEquipo(Equipo equipo) {
-		this.equipo = equipo;
-	}
-	public Partido getPartido() {
-		return partido;
-	}
-	public void setPartido(Partido partido) {
-		this.partido = partido;
-	}
-	public EnumResultado getResultado() {
-		return resultado;
-	}
-	public void setResultado(EnumResultado resultado) {
-		this.resultado = resultado;
-	}
-	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
-	
-	//establezco el puntaje
-	public  int getPuntaje() {
-		return puntaje;
-	}
-	//establezo que puntaje se relaciona con puntos
-	public void setPuntaje(int puntaje) {
-		this.puntaje = pronostico.puntos();
-	}
-	
-	
-	
-	
-	
-	
-		
-		
-		
 
 }
+
